@@ -6,17 +6,17 @@ var countStartNumber = 30;
 var questions = [
     
     {
-        question: "What was the first full length CGI movie?",
-        answers: ["A Bug's Life", "Monsters Inc.", "Toy Story", "The Lion King"],
-        correctAnswer: "Toy Story",
-        image: "assets\Toy Story p7.gif"
+        question: "What was the first animated disney movie",
+        answers: ["The Little Mermaid", "The Fox and the Hound.", "The Jungle Book", "The Lion King"],
+        correctAnswer: "The Fox and the Hound",
+        image: "assests/the fox and the hound.jpg"
     },
 
     {
-        question: "Which of these is NOT a name of one of the Spice Girls?",
-        answers: ["Sporty Spice", "Hot Spice", "Scary Spice", "Posh Spice"],
-        correctAnswer: "Hot Spice",
-        image: "assets\spice girls p7.gif"
+        question: "What country are the muppets from the movie The Great Muppet Caper?",
+        answers: ["United States", "New Zealand", "United Kingdom", "Canada"],
+        correctAnswer: "Unitated Kigndom",
+        image: "assests/united kingdom.jpg"
     }
 
 
@@ -61,7 +61,36 @@ var game = {
     },
 
     timeUp: function() {
+        clearInterval (timer);
+
+        $("#counter-number").html(game.counter);
+        panel.html("<h2>Out of Time!</h2>");
+        panel.append("<h3> The Correct Answer was: " + questions[this.currentQuestion].correctAnswer);
+        panel.append("<img src= '" + questions[this.currentQuestion].image + "'/>");
+
+        if (game.currentQuestion === questions.length - 1)
+        {
+            setTimeout(game.results, 3 * 1000);
+        }
+        else
+        {
+            setTimeout(game.nextQuestion, 3 * 1000);
+        }
         
+    }
+
+    results: function() {
+        clearInterval(timer);
+
+        panel.html("<h2>All done, here's how you did!</h2>");
+
+        $("#counter-number").html(game.counter);
+
+        panel.append("<h3>Corect Answers: " + game.correct + "</h3>");
+        panel.append("<h3>Incorrect Answers: " + game.incorrect + "</h3>")
+        panel.append("<h3>Unanswered " +(questions.length - (game.correct + game.incorrect)) + "</h3>")
+        panel.append("<br><button id= 'start over'>Start Over?</button>");
+    
     }
 
 
