@@ -91,8 +91,68 @@ var game = {
         panel.append("<h3>Unanswered " +(questions.length - (game.correct + game.incorrect)) + "</h3>")
         panel.append("<br><button id= 'start over'>Start Over?</button>");
     
+    },
+
+    clicked: function(e) {
+
+        clearInterval(timer);
+
+        if ($(e.target).attr("data-name") === questions[tthis.currentQuestion].correctAnswer)
+        {
+            this.answeredCorrectly();
+        }
+        else
+        {
+            this.answeredIncorrectly();
+        }
+    },
+
+    answeredIncorrectly: function() {
+
+        game.incorrect++;
+
+        clearInterval(timer);
+
+        panel.html("<h2>Nope!</h2>");
+        panel.append("<h3>The correct answer was: " + questions[game.currentQuestion].correctAnswer + "</h3>");
+        panel.append("<img src= '"+ questions[game.currentQuestion].image + "' />");
+
+
+        if (game.currentQuestion === questions.length - 1)
+    {
+        setTimeout(game.results, 3 * 1000);
+    }
+    else
+    {
+        setTimeout(game.nextQuestion, 3 * 1000);
+    }
+    game.cncorrect++;
+
+        clearInterval(timer);
+
+        panel.html("<h2>Correct</h2>");
+        panel.append("<img src= '"+ questions[game.currentQuestion].image + "' />");
+
+
+        if (game.currentQuestion === questions.length - 1)
+    {
+        setTimeout(game.results, 3 * 1000);
+    }
+    else
+    {
+        setTimeout(game.nextQuestion, 3 * 1000);
     }
 
 
+    },
 
-} 
+        reset: function() {
+
+            this.currentQuestion =0;
+            this.counter = countStartNumber;
+            this.correct =0;
+            this.incorrect =0;
+            this.loadQuestion();
+        }
+
+};
