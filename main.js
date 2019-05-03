@@ -77,7 +77,7 @@ var game = {
             setTimeout(game.nextQuestion, 3 * 1000);
         }
         
-    }
+    },
 
     results: function() {
         clearInterval(timer);
@@ -156,3 +156,25 @@ var game = {
         }
 
 };
+
+
+// CLICK EVENTS
+// ------------------------------------------------------
+$(document).on("click", "#start-over", function() {
+
+    game.reset();
+
+});
+
+$(document).on("click", ".answer-buttom", function(e) {
+
+    game.clicked(e);
+
+});
+
+$(document).on("click", "#start", function(){
+
+    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id= 'counter-number'>30</span>Seconds</h2>");
+    game.loadQuestion();
+
+});
