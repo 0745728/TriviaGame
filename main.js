@@ -1,23 +1,44 @@
 var panel = $("#quiz-area");
 
-var countStartNumber = 30;
+var countStartNumber = 15;
 
 // Question set
 var questions = [
     
     {
-        question: "What was the first animated disney movie",
-        answers: ["The Little Mermaid", "The Fox and the Hound.", "The Jungle Book", "The Lion King"],
+        question: "What was the first animated disney movie in this decade?",
+        answers: ["The Little Mermaid" , "The Fox and the Hound." , "The Jungle Book" , "The Lion King"],
         correctAnswer: "The Fox and the Hound",
         image: "assests/the fox and the hound.jpg"
     },
 
     {
         question: "What country are the muppets from the movie The Great Muppet Caper?",
-        answers: ["United States", "New Zealand", "United Kingdom", "Canada"],
+        answers: ["United States" , "New Zealand" , "United Kingdom" , "Canada"],
         correctAnswer: "Unitated Kigndom",
         image: "assests/united kingdom.jpg"
-    }
+    },
+
+    {
+        question: "Which member of the Beatles was assassinated in 1980?",
+        answers: ["George Harrison" , "Ringo Starr" , "John Lennon" , "Paul McCartney"],
+        correctAnswer: "John Lennon",
+        image: "assests/John_Lennon_1969_(cropped).jpg"
+    },
+
+    {
+        question: "What game emerged in 1980??",
+        answers: ["Snatcher" , "Super Mario" , "Pokemon" , "Pac-Man"],
+        correctAnswer: "Pac-Man",
+        image: "assests/pac-man.png"
+    },
+
+    {
+        question: "What is the name of Popeye's girlfriend?",
+        answers: ["Olive Oyl" , "Princess Fiona" , "Minnie Mouse" , "Elsa"],
+        correctAnswer: "Olive Oyl",
+        image: "assests/popeye.jpg"
+    },
 
 
 ]
@@ -61,6 +82,7 @@ var game = {
     },
 
     timeUp: function() {
+        
         clearInterval (timer);
 
         $("#counter-number").html(game.counter);
@@ -80,6 +102,7 @@ var game = {
     },
 
     results: function() {
+
         clearInterval(timer);
 
         panel.html("<h2>All done, here's how you did!</h2>");
@@ -130,7 +153,7 @@ var game = {
 
         clearInterval(timer);
 
-        panel.html("<h2>Correct</h2>");
+        panel.html("<h2>Correct!</h2>");
         panel.append("<img src= '"+ questions[game.currentQuestion].image + "' />");
 
 
@@ -173,8 +196,7 @@ $(document).on("click", ".answer-buttom", function(e) {
 });
 
 $(document).on("click", "#start", function(){
-
-    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id= 'counter-number'>30</span>Seconds</h2>");
+    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id= 'counter-number'>15</span>Seconds</h2>");
     game.loadQuestion();
 
 });

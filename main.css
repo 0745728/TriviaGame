@@ -4,7 +4,7 @@ body {
 
 body {
     text-align: center;
-    background-image: url("images.jpg")
+    background-image: url("background.jpg")
 }
 
 #wrapper {
@@ -13,7 +13,7 @@ body {
     height: 95%;
     box-sizing: border-box;
     margin: 2.5% auto;
-    background-color: green;
+    background-color: transparent;
 
 }
 
@@ -39,10 +39,10 @@ img {
 
 h1 {
     padding-top: 2.5%;
-    font-family: 'Paytone One', sans-serif;
+    font-family: 'Modak', cursive;
     font-size: 6.5em;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 h2 {
@@ -57,7 +57,7 @@ h3 {
 
 #start {
     margin-top: 10%;
-    background:white;
+    background:transparent;
     border: 2px solid black;
 }
 
