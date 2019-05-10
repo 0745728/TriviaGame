@@ -4,7 +4,7 @@ body {
 
 body {
     text-align: center;
-    background-image: url("background.jpg")
+    background-image: url("green.jpg")
 }
 
 #wrapper {
@@ -31,6 +31,7 @@ button {
     cursor: pointer;
     background: transparent;
     border: 0;
+    font-family: 'Arvo', serif;
 }
 
 img {
@@ -39,7 +40,7 @@ img {
 
 h1 {
     padding-top: 2.5%;
-    font-family: 'Modak', cursive;
+    font-family: 'Arvo', serif;
     font-size: 6.5em;
     font-weight: bold;
     color: black;
@@ -48,17 +49,20 @@ h1 {
 h2 {
     margin-bottom: 25px;
     font-size: 35px;
+    font-family: 'Arvo', serif;
 }
 
 h3 {
     margin-bottom: 10px;
     font-size: 25px;
+    font-family: 'Arvo', serif;
 }
 
 #start {
     margin-top: 10%;
     background:transparent;
     border: 2px solid black;
+    font-family: 'Arvo', serif;
 }
 
 button:hover {
