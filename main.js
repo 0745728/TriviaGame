@@ -7,7 +7,7 @@ var questions = [
     
     {
         question: "What was the first animated disney movie in this decade?",
-        answers: ["The Little Mermaid" , "The Fox and the Hound." , "The Jungle Book" , "The Lion King"],
+        answers: ["The Little Mermaid" , "The Fox and the Hound" , "The Jungle Book" , "The Lion King"],
         correctAnswer: "The Fox and the Hound",
         image: "assests/the fox and the hound.jpg"
     },
@@ -15,7 +15,7 @@ var questions = [
     {
         question: "What country are the muppets from the movie The Great Muppet Caper?",
         answers: ["United States" , "New Zealand" , "United Kingdom" , "Canada"],
-        correctAnswer: "Unitated Kigndom",
+        correctAnswer: "United Kingdom",
         image: "assests/united kingdom.jpg"
     },
 
